@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nama_lengkap');
-            $table->boolean('jenis_user')->default(false);
+            $table->integer('jenis_user');
             $table->string('username');
             $table->boolean('can_buy')->default(true);
             $table->string('foto');
