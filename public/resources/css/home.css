@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../images/bg_home_admin.jpeg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.nav {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.footer-end-text {
+    font-size: 2rem;
+}
+
+.nav-link {
+    font-size: 1.5rem;
+}
+
+.brand {
+    font-size: 2rem;
+}
+
+.bg-utama {
+
+    background-color: rgb(110, 175, 124);
+}
+
+.color-utama {
+    color: rgba(73, 155, 91, .8);
+}
+
+.dropdown-menu {
+    padding: 10px !important;
+}
+
+.dropdown-item {
+    font-size: 1.3rem !important;
+}
+
+.link {
+    text-decoration: none;
+    color: rgba(73, 155, 91, .8);
+    transition: .3s;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.foto-profil {
+    box-shadow: 0 0 3px 3px rgba(255, 255, 255, .9);
+}
+
+.pilihan {
+    /* border: 1px solid #393939; */
+    box-shadow: rgb(104, 98, 98) 0px 2px 5px;
+    border-radius: 12px !important;
+    color: rgb(110, 175, 124);
+    font-weight: bold;
+    min-width: 20rem;
+    height: 182px;
+}
+
+.card-body i {
+    font-size: 4rem;
+}
+
+
+.dropdown-item:active {
+    background-color: white;
+    color: black;
+}
+
+.nav-item.tengah {
+    text-align: start;
+    position: relative;
+}
+
+.nav-item .posisi-admin {
+    font-size: 14px;
+    /* Sesuaikan ukuran font */
+    line-height: 1.2;
+    /* Jarak antar elemen */
+    position: absolute;
+    top: 60%;
+    /* Posisikan tepat di bawah logo */
+    right: 0px;
+    /* Geser teks lebih ke kanan */
+    white-space: nowrap;
+    /* Pastikan teks tidak terpotong */
+}
+
+
+
+/* #footer {
+    margin-top:1000px !important;
+} */
+@media screen and (max-width:768px) {
+    #menu .container {
+        margin-top: 10px !important;
+    }
+
+    .ilang {
+        display: none;
+    }
+
+    #footer .container {
+        display: flex;
+        flex-direction: column-reverse !important;
+    }
+
+    .footer-title {
+        font-size: 1.2rem;
+        margin-top: 10px !important;
+    }
+
+    .footer-text {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width:500px) {
+    .brand {
+        font-size: 1.7rem;
+    }
+
+    .pilihan {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .card-body {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .translate {
+        transform: translateY(-3px);
+    }
+
+    .img-brand {
+        width: 35px;
+        height: 35px;
+    }
+
+    .card-body img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .pilihan {
+        width: 100%;
+        height: 90px;
+    }
+
+    .card-body i {
+        font-size: 3rem;
+        margin-top: -15px;
+    }
+
+    .foto-profil {
+        width: 40px;
+        height: 40px;
+    }
+
+    .card-body h3 {
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: -7px;
+    }
+
+    .footer-title {
+        font-size: 1rem;
+        margin-top: 10px !important;
+    }
+
+    .footer-text {
+        font-size: 0.7rem;
+    }
+
+    .padding-sm {
+        padding-right: 3px !important;
+        padding-left: 3px !important;
+    }
+
+    #footer .container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    span img {
+        width: 40px;
+    }
+
+    #footer {
+        margin-top: auto !important;
+    }
+
+    .footer-end-text {
+        font-size: 1.3rem;
+    }
+
+    .dropwdown-toggle {
+        margin-left: 10px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+@media (max-width:320px) {
+    .pilihan {
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .brand {
+        font-size: 1.2rem;
+    }
+
+    .me-foto {
+        margin-right: 0 !important;
+    }
+}
