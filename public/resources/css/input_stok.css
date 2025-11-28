@@ -1,0 +1,219 @@
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font-family: "Poppins", sans-serif;
+	display:flex;
+	flex-direction: column;
+	height: 100vh;
+	background-color: #fff;
+}
+.color-kedua {
+	color:#65916F;
+}
+.nav-link {
+	font-size : 1.5rem;
+}
+.brand {
+	font-size: 1.5rem;
+
+}
+.bg-utama {
+/*	background-color: rgba(73, 155, 91, .8);*/
+background-color: rgb(110, 175, 124);
+}
+.bg-input {
+	background-color: #6EAF7C;
+	color:white;
+}
+.color-utama {
+	color : rgba(73,155,91,.8);
+}
+.color-hijau {
+	color:#63A751;
+}
+.dropdown-menu {
+	padding:10px !important;
+}
+.dropdown-item {
+	font-size:1.3rem !important;
+}
+
+/*.navbar-nav {
+	display:flex !important;
+}*/
+/*#menu {
+	height:100vh;
+}*/
+.foto-profil {
+	box-shadow: 0 0 3px 3px rgba(255,255,255,.9);
+}
+
+.dropdown-item:active {
+	background-color: white;
+	color:black;
+}
+
+/* Style untuk card Inputan */
+input, #btn-kurang, #btn-tambah {
+	border-radius: 8px;
+}
+input {
+	border:none;
+	height: 50px !important;
+	width:80% !important;
+}
+input:active {
+	border:1px solid green;
+}
+#btn-kurang, #btn-tambah {
+	font-weight: bold;
+	width: 50px;
+	height: 50px;
+	color:#6eaf7c;
+	font-size:2rem;
+	border:none;
+	background-color:white;
+}
+.bg-saran {
+	background-color: #6EAF7C;
+	color:white;
+}
+.btn-kirim {
+	padding:15px 0;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+.btn-kirim:hover {
+	background-color:#6EAF7C;
+	color:white;
+}
+.btn-kirim:active {
+	background-color: #6EAF7C;
+}
+/* Akhir style untuk card inputan */
+
+/* Media query untuk  */
+
+/* Responsive untuk layar ukuran medium atau tablet */
+@media screen and (max-width:768px) {
+	.nav {
+		justify-content: space-evenly;
+	}
+	#inputStokGas {
+		transform:translateX(-40px);
+	}
+	span img {
+		width: 40px;
+	}
+	.brand {
+		transform:translateX(-40px);
+	}
+	/* style untuk halaman input stock gas medium */
+	input {
+		width: 75% !important;
+	}
+/*	penmb*/
+	/* .tengah {
+		transform:translateX(-50px);
+	} */
+	/* akhir dari style halaman input stock gas medium */
+}
+/* Akhir responsive layar medium */
+
+
+@media (max-width:500px) {
+	.ilang {
+		display:none;
+	}
+	.nav-link {
+		font-size: 1.5rem;
+	}
+	.brand {
+		font-size:1.7rem;
+	}
+	.nav {
+		position:relative;
+		padding-left:20px;
+	}
+	.home {
+		position: absolute;
+		left:50;
+	}
+	.bi {
+		transform:translateX(100px) !important;
+	}
+	.img-brand {
+		width: 35px;
+		height:35px;
+	}
+	/* style untuk halaman input stock gas medium */
+	input {
+		width: 65% !important;
+	}
+	#btn-kurang, #btn-tambah {
+		font-size:1.5rem !important;
+	}
+	/* akhir dari style halaman input stock gas medium */
+
+	.footer-title {
+		font-size:1rem;
+		margin-top: 10px !important;
+	}
+	.footer-text {
+		font-size:0.7rem;
+	}
+	.padding-sm {
+		padding-right:3px !important;
+		padding-left:3px !important;
+	}
+	#footer .container {
+		display:flex;
+		justify-content: flex-start;
+		flex-direction: column-reverse;
+	}
+	span img {
+		width: 40px;
+	}
+	#footer {
+		margin-top:auto !important; 
+	}
+	.footer-end-text {
+		font-size:1.3rem;
+	}
+	.dropwdown-toggle{
+		margin-left:10px;
+	}
+	.nav {
+		justify-content: center;
+	}
+	.brand {
+		transform:translateX(-40px);
+	}
+}
+@media (max-width:320px) {
+	.nav-link {
+		font-size : 1rem;
+	}
+	.brand {
+		font-size: 1.2rem;
+	}
+	.me-foto {
+		margin-right: 0 !important;
+	}
+	/*	style input jumlah gas hp ukuran kecil */
+	input {
+		width: 70% !important;
+		height: 30px !important;
+	}
+	#btn-kurang, #btn-tambah {
+		width: 30px;
+		height: 30px;
+		font-size:1rem !important;
+	}
+	.btn-kirim {
+		padding:5px 0 !important;
+	}
+	/* akhir dari style input jumlah gas untuk hp kecil */
+}

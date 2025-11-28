@@ -10,4 +10,9 @@ class AdminController extends Controller
     {
         return view('admin.home');
     }
+
+    public function inputStok(Request $request)
+    {
+        return view('admin.input-stok');
+    }
 }

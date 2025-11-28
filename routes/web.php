@@ -11,3 +11,4 @@ Route::get('/', function () {
 
 
 Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin/input-stok', [AdminController::class, 'inputStok']);

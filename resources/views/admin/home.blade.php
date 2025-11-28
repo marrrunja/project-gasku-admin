@@ -35,7 +35,7 @@
                     <div class="card-body text-center">
                         <i class="bi bi-megaphone fw-bold"></i>
                         <h3 class="card-text fw-bold translate">
-                            <a href="input_stok_gas.php" class="link">
+                            <a href="/admin/input-stok" class="link">
                                 Input Stok Gas
                             </a>
                         </h3>
