@@ -1,13 +1,13 @@
 @extends('layout.layout')
 @section('title', 'Manage Akun User')
-@section('content')
+@section('body')
     <section>
 
 
         <div class="container">
 
             <!-- Title -->
-            <h3 class="text-center fw-bold mb-4">AKUN USER YANG TERSEDIA</h3>
+            <h3 class="text-center fw-bold mb-1">AKUN USER YANG TERSEDIA</h3>
 
             <!-- Search -->
             <div class="row justify-content-center mb-4">
@@ -35,7 +35,7 @@
             @endphp
 
             <!-- RULE: Jika item hanya 1 → center -->
-            <div class="container-fluid overflow-auto" style="max-height: 48vh;">
+            <div class="container-fluid overflow-auto" style="max-height: 55vh;">
 
                 <div class="row {{ $count == 1 ? 'justify-content-center' : 'row-cols-1 row-cols-md-2' }} g-4">
 

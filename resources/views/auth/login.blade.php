@@ -6,7 +6,8 @@
         <div class="card mt-3 border-0 rounded-4 shadow">
             <div class="card-body">
                 <h5 class="card-title text-center mb-4 text-success">Halaman Login</h5>
-                <form method="POST" action="">
+                <form method="POST" action="{{ route('login.process') }}">
+                    @csrf
                     <label for="username" class="form-label">Username</label>
                     <div class="form-group mb-3">
                         <input type="text" class="form-control" id="username" name="username"
