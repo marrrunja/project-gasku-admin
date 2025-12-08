@@ -14,7 +14,7 @@
 
     <!-- User Menu -->
     <div class="d-flex align-items-center gap-2">
-        <span class="text-white fw-bold">username</span>
+        <span class="text-white fw-bold fs-3">username</span>
         <img src="{{ asset('images/tokito.jpg') }}" class="rounded-circle"
             style="width:40px; height:40px; object-fit:cover;">
 
@@ -30,11 +30,22 @@
                 <li>
                     <hr class="dropdown-divider border-white my-1">
                 </li>
+                </li>
                 <li>
-                    <a href="#" class="btn btn-success w-100 text-white text-decoration-none py-1">
+                    <a href="{{ route('logout') }}" class="btn btn-success w-100 text-white text-decoration-none py-1">
                         <i class="bi bi-box-arrow-left me-2"></i>Logout
                     </a>
                 </li>
+                <hr class="dropdown-divider border-white my-1">
+
+                <li>
+                    <a href="{{ route('admin.buat_account') }}"
+                        class="btn btn-success w-100 text-white text-decoration-none py-1">
+                        <i class="bi bi-person-add me-2"></i>Buat Akun
+                    </a>
+                </li>
+                <li>
+
             </ul>
         </div>
     </div>
