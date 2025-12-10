@@ -16,20 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @stack('styles')
     <style>
-        /* Flex layout agar header/footer tetap, main mengisi sisa layar */
-        html,
-        body {
-            height: 100%;
-        }
 
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-
-        main {
-            flex: 1;
-        }
     </style>
 </head>
 

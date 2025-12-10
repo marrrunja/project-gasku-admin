@@ -7,7 +7,7 @@
 @section('title', 'Home admin')
 
 @section('body')
-    <section class=" pb-5 pt-5" style="max-height: 100vh; overflow-y: auto;">
+    <section style="padding-top: 115px; padding-bottom: 115px;">
         <div class="container">
             <div class="row justify-content-center gy-2">
                 <div class="col-12 col-md-6 col-lg-4 mb-2 me-lg-1 mb-md-3 mb-lg-0">

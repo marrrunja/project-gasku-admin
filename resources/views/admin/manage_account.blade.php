@@ -29,13 +29,17 @@
                     ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
                     ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
                     ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
+                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
+                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
+                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
+                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
                 ];
 
                 $count = count($akun);
             @endphp
 
             <!-- RULE: Jika item hanya 1 → center -->
-            <div class="container-fluid overflow-auto" style="max-height: 55vh;">
+            <div>
 
                 <div class="row {{ $count == 1 ? 'justify-content-center' : 'row-cols-1 row-cols-md-2' }} g-4">
 
