@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
+                <!-- <div class="col-12 col-md-6 col-lg-4">
                     <div class="card pilihan">
                         <div class="card-body text-center">
                             <i class="bi bi-cart fw-bold"></i>
@@ -51,7 +51,7 @@
                             </h3>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
