@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @section('title', 'Manage Akun User')
 @section('body')
-    <section>
+    <section style="min-height:79vh;">
 
 
         <div class="container">
@@ -23,15 +23,7 @@
             @php
                 $akun = [
                     ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
-                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
-                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
-                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
-                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
-                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
-                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
-                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
-                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
-                    ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
+
                     ['name' => 'PEOPLE +62', 'phone' => '012345678901112'],
                 ];
 
@@ -41,11 +33,11 @@
             <!-- RULE: Jika item hanya 1 → center -->
             <div>
 
-                <div class="row {{ $count == 1 ? 'justify-content-center' : 'row-cols-1 row-cols-md-2' }} g-4">
+                <div class="row {{ $count == 1 ? 'justify-content-center' : 'row-cols-1 row-cols-md-2' }} g-4 mb-4">
 
                     @foreach ($akun as $item)
-                        <div class="col">
-                            <div class="d-flex justify-content-between align-items-center border rounded p-3 shadow-sm">
+                        <div class="col ">
+                            <div class="d-flex justify-content-between align-items-center border rounded p-3 shadow-sm ">
 
                                 <div class="d-flex align-items-center gap-3">
                                     <i class="bi bi-person-square fs-1 text-secondary"></i>
@@ -54,8 +46,10 @@
                                         <small class="text-muted">{{ $item['phone'] }}</small>
                                     </div>
                                 </div>
+                                <a href="{{route('admin.detail_akun')}}">
+                                    <button class="btn btn-success px-4 fw-bold">lihat</button>
+                                </a>
 
-                                <button class="btn btn-danger px-4 fw-bold">Blokir</button>
                             </div>
                         </div>
                     @endforeach

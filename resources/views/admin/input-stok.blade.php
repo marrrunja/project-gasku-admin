@@ -9,8 +9,8 @@
 @endpush
 @section('body')
 
-    <section id="inputStok" class="pt-5 pb-5">
-        <div class="container">
+    <section id="inputStok" class="pt-5 pb-5" style="min-height:79vh;">
+        <div class=" container">
             <form method="post" action="">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-8">
