@@ -1,5 +1,5 @@
 <!-- start footer -->
-<section class="bg-success text-white py-3 d-flex justify-content-center align-items-center">
+<section class="bg-success text-white py-5 d-flex justify-content-center align-items-center">
     <div class="text-center">
         <h4 class="footer-title" style="cursor: default">Hubungi Saya</h4>
         <div class="d-flex justify-content-center gap-4 mt-2">

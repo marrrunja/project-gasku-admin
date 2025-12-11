@@ -6,8 +6,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-
-
+use App\Http\Controllers\API\GasController;
 
 Route::get('/', [HomeController::class, 'welcome']);
 
@@ -25,3 +24,4 @@ Route::post('/auth/login', [AuthController::class, 'loginProcess'])->name('login
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/auth/register', [AuthController::class, 'register'])->name('register');
+Route::get('/gas/get', [GasController::class, 'index']);
