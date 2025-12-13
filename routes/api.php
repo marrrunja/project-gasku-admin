@@ -33,3 +33,5 @@ Route::get('/gas/get', [GasController::class, 'index'])->middleware(['auth:sanct
 Route::post('/login', [AuthController::class, 'loginMobile']);
 Route::post('/logout', [AuthController::class, 'logoutMobile'])->middleware(['auth:sanctum']);
 Route::get('/me', [AuthController::class, 'me'])->middleware(['auth:sanctum']);
+
+Route::post('/gas/pembelian', [GasController::class, 'pembelian'])->middleware(['auth:sanctum']);

@@ -14,6 +14,7 @@ Route::get('/', [HomeController::class, 'welcome']);
 
 
 
+Route::post('/gas/update', [GasController::class, 'update'])->name('gas.update');
 Route::get('/admin/home', [AdminController::class, 'home'])->name('admin.home');
 Route::get('/admin/manage_account', [AdminController::class, 'manage_account'])->name('admin.manage_account');
 Route::get('/admin/input-stok', [AdminController::class, 'inputStok']);

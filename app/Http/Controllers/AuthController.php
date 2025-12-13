@@ -29,8 +29,12 @@ class AuthController extends Controller
 
         // Proses login
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate(); // penting agar session aman
-            return redirect()->route('admin.home');
+            if(Auth::user()['jenis_user'] === 2){
+                $request->session()->regenerate(); // penting agar session aman
+                return redirect()->route('admin.home');
+            }
+            else 
+                return redirect()->route('login')->with('error', 'Kredensial tidak cocok');
         }
 
         return redirect()->route('login')->with('error', 'Username atau password salah');

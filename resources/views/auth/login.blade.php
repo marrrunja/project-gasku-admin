@@ -6,6 +6,11 @@
         <div class="card mt-3 border-0 rounded-4 shadow">
             <div class="card-body">
                 <h5 class="card-title text-center mb-4 text-success">Halaman Login</h5>
+                @if(Session::has('error'))
+                <div class="alert alert-danger" role="alert">
+                    {{ Session::get('error') }}
+                </div>
+                @endif
                 <form method="POST" action="{{ route('login.process') }}">
                     @csrf
                     <label for="username" class="form-label">Username</label>
@@ -44,5 +49,5 @@
     </div>
 </section>
 @push('scripts')
-    <script src="{{ asset('js/login.js') }}"></script>
+<script src="{{ asset('js/login.js') }}"></script>
 @endpush

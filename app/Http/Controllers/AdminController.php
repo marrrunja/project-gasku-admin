@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -12,7 +13,11 @@ class AdminController extends Controller
     }
     public function manage_account()
     {
-        return view('admin.manage_account');
+        $users = DB::table('users')->where('jenis_user', '<>', 2)->get();
+        $data = [
+            'users' => $users
+        ];
+        return view('admin.manage_account', $data);
     }
     public function buat_account()
     {
