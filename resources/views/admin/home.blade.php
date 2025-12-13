@@ -25,7 +25,7 @@
                         <div class="card-body text-center">
                             <i class="bi bi-activity fw-bold"></i>
                             <h3 class="card-text fw-bold translate">
-                                <a href="cust_activity.php" class="link">Aktivitas Pembeli</a>
+                                <a href="{{route('admin.aktivitas_pembeli')}}" class="link">Aktivitas Pembeli</a>
                             </h3>
                         </div>
                     </div>
@@ -43,15 +43,15 @@
                     </div>
                 </div>
                 <!-- <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card pilihan">
-                        <div class="card-body text-center">
-                            <i class="bi bi-cart fw-bold"></i>
-                            <h3 class="card-text fw-bold translate">
-                                <a href="pesanan.php" class="link">Pesanan</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div> -->
+                            <div class="card pilihan">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-cart fw-bold"></i>
+                                    <h3 class="card-text fw-bold translate">
+                                        <a href="pesanan.php" class="link">Pesanan</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div> -->
             </div>
         </div>
     </section>

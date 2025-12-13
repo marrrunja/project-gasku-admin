@@ -18,7 +18,18 @@ class AdminController extends Controller
     {
         return view('admin.buat_account');
     }
-
+    public function aktivitas_pembeli()
+    {
+        return view('admin.aktivitas_pembeli');
+    }
+    public function detail_transaksi()
+    {
+        return view('admin.detail_transaksi');
+    }
+    public function detail_akun()
+    {
+        return view('admin.detail_akun');
+    }
     public function inputStok(Request $request)
     {
         return view('admin.input-stok');
