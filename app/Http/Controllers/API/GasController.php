@@ -16,6 +16,6 @@ class GasController extends Controller
     }
     public function editTableGas()
     {
-        $gas = DB::table('gases')
+        // $gas = DB::table('gases');
     }
 }
