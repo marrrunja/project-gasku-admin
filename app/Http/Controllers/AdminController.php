@@ -25,7 +25,20 @@ class AdminController extends Controller
     }
     public function aktivitas_pembeli()
     {
-        return view('admin.aktivitas_pembeli');
+        $dataTransaksis = DB::table('transaksis')->join('users', 'transaksis.id_user', '=', 'users.id')
+            ->select(
+                'users.no_kk', 
+                'users.nama_lengkap', 
+                'transaksis.created_at', 
+                'transaksis.status', 
+                'transaksis.id',
+                'transaksis.jumlah_pembelian'
+            )
+            ->get();
+        $data = [
+            'dataTransaksis' => $dataTransaksis
+        ];
+        return view('admin.aktivitas_pembeli', $data);
     }
     public function detail_transaksi()
     {
@@ -46,9 +59,76 @@ class AdminController extends Controller
     }
 
     public function blokir(Request $request){
-        dd($request->id);
+         $id = $request->id;
+        $blokirUser = DB::table('users')->where('id', '=', $id)->update([
+            'is_aktif' => 0
+        ]);
+        if($blokirUser > 0){
+            return redirect()->back()->with([
+                'status' => 'success',
+                'message' => "Berhasil memblokir "
+            ]);
+        }
+        else {
+              return redirect()->back()->with([
+                'status' => 'warning',
+                'message' => "Gagal memblokir user"
+            ]);
+        }
     }
     public function buka(Request $request){
-        dd($request->id);
+        $id = $request->id;
+        $bukaBlokirUser = DB::table('users')->where('id', '=', $id)->update([
+            'is_aktif' => 1
+        ]);
+        if($bukaBlokirUser > 0){
+            return redirect()->back()->with([
+                'status' => 'success',
+                'message' => "Berhasil membuka blokir "
+            ]);
+        }
+        else {
+              return redirect()->back()->with([
+                'status' => 'warning',
+                'message' => "Gagal membuka memblokir user"
+            ]);
+        }
+    }
+
+    public function beli(Request $request){
+        $id = $request->id;
+        $updateCanBuy = DB::table('users')->where('id', '=', $id)->update([
+            'can_buy' => 1
+        ]);
+         if($updateCanBuy > 0){
+            return redirect()->back()->with([
+                'status' => 'success',
+                'message' => "Berhasil memperbarui status pembeli"
+            ]);
+        }
+        else {
+              return redirect()->back()->with([
+                'status' => 'warning',
+                'message' => "Gagal memperbarui status pembeli"
+            ]);
+        }
+    }
+    public function not_beli(Request $request){
+        $id = $request->id;
+        $updateCanBuy = DB::table('users')->where('id', '=', $id)->update([
+            'can_buy' => 0
+        ]);
+         if($updateCanBuy > 0){
+            return redirect()->back()->with([
+                'status' => 'success',
+                'message' => "Berhasil memperbarui status pembeli"
+            ]);
+        }
+        else {
+              return redirect()->back()->with([
+                'status' => 'warning',
+                'message' => "Gagal memperbarui status pembeli"
+            ]);
+        }
     }
 }

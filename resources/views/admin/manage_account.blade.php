@@ -33,17 +33,20 @@
             <div class="row {{ $count == 1 ? 'justify-content-center' : 'row-cols-1 row-cols-md-2' }} g-4 mb-4">
 
                 @foreach ($users as $akun)
+                @php
+                $isAktif = $akun->is_aktif === 1;
+                @endphp
                 <div class="col-12 col-md-6">
-                    <div class="d-flex justify-content-between align-items-center border rounded px-4 py-3 shadow-sm ">
+                    <div class="d-flex justify-content-between align-items-center border rounded px-4 py-3 shadow-sm {{ !$isAktif ? 'bg-danger text-white':'' }}">
                         <div class="d-flex align-items-center gap-3">
                             <i class="bi bi-person-circle fs-1"></i>
                             <div>
                                 <p class="m-0 fw-bold">{{ $akun->nama_lengkap }}</p>
-                                <small class="text-muted">{{ $akun->no_kk }}</small>
+                                <small class="{{$isAktif ? 'text-dark':'text-light'}}">{{ $akun->no_kk }}</small>
                             </div>
                         </div>
                         <a href="{{route('admin.detail_akun', $akun->id)}}">
-                            <button class="btn btn-success px-4 fw-semibold">lihat</button>
+                            <button class="btn btn-{{$isAktif ?'success':'light'}} px-4 fw-semibold">lihat</button>
                         </a>
 
                     </div>

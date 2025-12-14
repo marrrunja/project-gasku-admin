@@ -42,9 +42,4 @@ class ProfilController extends Controller
             ]);
         }   
     }
-    public function detail(Request $request)
-    {
-        $id = $request->id;
-        $user = DB::table('users')->where('id', $id)->first();
-    }
 }

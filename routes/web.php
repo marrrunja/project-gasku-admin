@@ -26,6 +26,8 @@ Route::get('/admin/detail_akun/{id}', [AdminController::class, 'detail_akun'])->
 Route::post('/admin/blokir/{id}', [AdminController::class, 'blokir'])->name('user.blokir');
 Route::post('/admin/buka/{id}', [AdminController::class, 'buka'])->name('user.buka');
 
+Route::post('/admin/cannotBuy/{id}', [AdminController::class, 'not_beli'])->name('user.not_beli');
+Route::post('/admin/canBuy/{id}', [AdminController::class, 'beli'])->name('user.beli');
 
 Route::get('/auth/login', [AuthController::class, 'login'])->name('login');
 Route::post('/auth/login', [AuthController::class, 'loginProcess'])->name('login.process');

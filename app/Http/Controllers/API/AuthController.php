@@ -34,6 +34,11 @@ class AuthController extends Controller
                 'kredensial' => ['Username atau password tidak cocok']
             ]);
         }
+        if( $user->is_aktif === 0){
+            return response()->json([
+                'message' => 'Anda telah di blokir, silahkan hubungi admin untuk verifikasi lebih lanjut'
+            ]);
+        }
         $token = $user->createToken($request->username)->plainTextToken;
         $data = [
             'message' => 'Berhasil login',

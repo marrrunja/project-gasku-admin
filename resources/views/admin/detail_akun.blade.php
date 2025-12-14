@@ -258,8 +258,8 @@
                         @php
                         $isAktif = $user->is_aktif === 1; // Untuk tombol Blokir/Buka Blokir
                         $isCanBuy = $user->can_buy === 1; // Untuk tombol BISA BELI
+                        $btnBeliRoute = $isCanBuy ? 'user.not_beli' : 'user.beli';
 
-                        $btnBeliRoute = $isCanBuy ? 'user.disable_buy' : 'user.enable_buy';
                         $btnBeliText = $isCanBuy ? 'Nonaktifkan Beli' : 'Aktifkan Beli';
                         $btnBeliIcon = $isCanBuy ? '❌' : '✅';
 

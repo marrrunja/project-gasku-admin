@@ -99,6 +99,6 @@ class GasController extends Controller
                 'error' => $error
             ]);
         }
-        
     }
+    
 }
