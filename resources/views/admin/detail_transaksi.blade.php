@@ -144,6 +144,12 @@
 
     <section class="d-flex align-items-center py-4" style="min-height:79vh;">
         <div class="container d-flex justify-content-center mt-2 mb-5">
+              @if(Session::has('message'))
+                    <div class="alert alert-{{Session::get('status') }} alert-dismissible fade show mb-2 mt-2" role="alert">
+                        {{Session::get('message')}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
             <div class="transaction-card">
 
                 <div class="card-header-tx">
@@ -198,8 +204,8 @@
                     @if ($status_lower == 1)
                         <span class="badge bg-success text-white py-2 px-3 fs-6 mb-3"><i class="bi bi-check-circle-fill me-2"></i> TRANSAKSI LUNAS</span>
                         <div class="action-button-group">
-                            <button class="btn btn-sm btn-outline-dark">Cetak Struk <i class="bi bi-printer"></i></button>
-                            <a href="#" class="btn btn-sm btn-secondary">Kembali</a>
+                            <!-- <button class="btn btn-sm btn-outline-dark">Cetak Struk <i class="bi bi-printer"></i></button> -->
+                            <a href="/admin/aktivitas_pembeli" class="btn btn-sm btn-secondary">Kembali</a>
                         </div>
                     @elseif ($status_lower == 0)
                         <span class="badge bg-warning text-dark py-2 px-3 fs-6 mb-3"><i class="bi bi-clock-fill me-2"></i> MENUNGGU KONFIRMASI</span>
@@ -212,15 +218,12 @@
                                 </button>
                             </form>
                         </div>
-                    @elseif ($status_lower == 'batal')
-                        <span class="badge bg-danger text-white py-2 px-3 fs-6 mb-3"><i class="bi bi-x-octagon-fill me-2"></i> TRANSAKSI DIBATALKAN</span>
-                        <div class="action-button-group">
-                            <a href="#" class="btn btn-sm btn-secondary">Kembali</a>
-                        </div>
                     @else
                         <span class="badge bg-secondary text-white py-2 px-3 fs-6 mb-3"><i class="bi bi-info-circle-fill me-2"></i> STATUS TIDAK DIKETAHUI</span>
                         <div class="action-button-group">
-                            <a href="#" class="btn btn-sm btn-secondary">Kembali</a>
+                            <button class="btn btn-sm btn-secondary py-3">
+                                <a href="/admin/aktivitas_pembeli" >Kembali</a>
+                            </button>
                         </div>
                     @endif
                 </div>

@@ -18,7 +18,7 @@
         <div class="row mb-4 g-3 align-items-end">
 
             {{-- Filter Status --}}
-            <div class="col-md-3 col-lg-2">
+            <!-- <div class="col-md-3 col-lg-2">
                 <label for="statusFilter" class="form-label text-sm fw-semibold text-muted mb-1">Status</label>
                 <select id="statusFilter" class="form-select form-select-sm rounded-3 shadow-sm border-0">
                     <option selected>Semua Status</option>
@@ -26,19 +26,19 @@
                     <option>Menunggu</option>
                     <option>Batal</option>
                 </select>
-            </div>
+            </div> -->
 
-            {{-- Urutkan / Sort Dropdown --}}
+            <!-- {{-- Urutkan / Sort Dropdown --}}
             <div class="col-md-3 col-lg-2">
                 <label for="sortDropdown" class="form-label text-sm fw-semibold text-muted mb-1">Urutkan</label>
                 <select id="sortDropdown" class="form-select form-select-sm rounded-3 shadow-sm border-0">
                     <option selected>Terbaru</option>
                     <option>Terlama</option>
                 </select>
-            </div>
+            </div> -->
             
             {{-- Search Input --}}
-            <div class="col-md-6 col-lg-8">
+            <!-- <div class="col-md-6 col-lg-8">
                 <form method="get" action="">
                     <label for="searchInput" class="form-label text-sm fw-semibold text-muted mb-1 d-none d-sm-block">Cari Pembeli (Nama/NIK)</label>
                     <div class="input-group">
@@ -53,7 +53,7 @@
                         </button>
                     </div>
                 </form>
-            </div>
+            </div> -->
         </div>
 
         <hr class="mb-4 text-light">
