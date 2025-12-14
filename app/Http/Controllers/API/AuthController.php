@@ -8,12 +8,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
-
+use Illuminate\Support\Facades\Log;
 class AuthController extends Controller
 {
     // udah bisa
     public function loginMobile(Request $request)
     {
+        Log::info("API hit from mobile");
         $rules = [
             'username' => ['required'],
             'password' => ['required']
@@ -28,17 +29,18 @@ class AuthController extends Controller
         $password = $request->password;
 
         $user = User::where('username', $request->username)->first();
-        if(!$user || !Hash::check($request->password, $user->password)){
+        if(!$user || !Hash::check($request->password, $user->password) || $user->jenis_user === 2){
             throw ValidationException::withMessages([
-                'kredensial' => ['Username atau email tidak cocok']
+                'kredensial' => ['Username atau password tidak cocok']
             ]);
         }
         $token = $user->createToken($request->username)->plainTextToken;
         $data = [
             'message' => 'Berhasil login',
             'username' => $username,
-            'password' => $password,
-            'token' => $token
+            'token' => $token,
+            'jenis_user' => $user->jenis_user,
+            'can_buy' => $user->can_buy
         ];
         return response()->json($data);
     }

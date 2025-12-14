@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\GasController;
 use App\Http\Controllers\API\AuthController;
-
+use App\Http\Controllers\API\ProfilController;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
@@ -29,9 +29,14 @@ Route::get('/user/get', function(){
         'users' => $users
     ]);
 });
-Route::get('/gas/get', [GasController::class, 'index'])->middleware(['auth:sanctum']);
-Route::post('/login', [AuthController::class, 'loginMobile']);
-Route::post('/logout', [AuthController::class, 'logoutMobile'])->middleware(['auth:sanctum']);
-Route::get('/me', [AuthController::class, 'me'])->middleware(['auth:sanctum']);
 
-Route::post('/gas/pembelian', [GasController::class, 'pembelian'])->middleware(['auth:sanctum']);
+
+Route::post('/login', [AuthController::class, 'loginMobile']);
+
+Route::middleware(['auth:sanctum'])->group(function(){
+    Route::post('/logout', [AuthController::class, 'logoutMobile']);
+    Route::get('/me', [AuthController::class, 'me']);
+    Route::get('/gas/get', [GasController::class, 'index']);
+    Route::post('/gas/pembelian', [GasController::class, 'pembelian']);
+    Route::post('/profil/ubah', [ProfilController::class, 'ubah']);
+});
