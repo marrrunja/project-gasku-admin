@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
@@ -87,10 +88,14 @@ class GasController extends Controller
             'jumlah.required' => 'Jumlah pembelian tidak boleh kosong!',
         ];
         $request->validate($validasi, $pesanValidasi);
+        $hargaGas = DB::table('gases')->where('id', '=', 1)->first()->harga;
 
         if($this->initOrderGas($user, $maxPembelian, $request->jumlah, $error)){
             return response()->json([
-                'message' => 'Berhasil melakukan pemesanan gas, silahkan lakukan pembayaran ke admin via whatsapp'
+                'message' => 'Berhasil melakukan pemesanan gas, silahkan lakukan pembayaran ke admin via whatsapp',
+                'tanggal_transaksi' =>  Carbon::now()->locale('id')->isoFormat('DD MMMM YYYY'),
+                'jumlah' => $request->jumlah,
+                'total'=>$request->jumlah * $hargaGas
             ]);
         }
         else {
@@ -102,3 +107,4 @@ class GasController extends Controller
     }
     
 }
+ 

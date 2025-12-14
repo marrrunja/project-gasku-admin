@@ -40,9 +40,24 @@ class AdminController extends Controller
         ];
         return view('admin.aktivitas_pembeli', $data);
     }
-    public function detail_transaksi()
+    public function detail_transaksi(Request $request)
     {
-        return view('admin.detail_transaksi');
+        $harga = DB::table('gases')->where('id', '=', 1)->first()->harga;
+        $dataTransaksi = DB::table('transaksis')->join('users', 'transaksis.id_user', '=', 'users.id')
+        ->where('transaksis.id', '=', $request->id)
+        ->select( 
+            'users.username', 
+            'transaksis.id',
+            'transaksis.created_at', 
+            'transaksis.status', 
+            'transaksis.jumlah_pembelian'
+        )
+        ->first();
+        $data = [
+            'dataTransaksi' => $dataTransaksi,
+            'harga' => $harga
+        ];
+        return view('admin.detail_transaksi',  $data);
     }
     public function detail_akun(Request $request)
     {
