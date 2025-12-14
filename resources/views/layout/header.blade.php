@@ -11,10 +11,9 @@
         <img src="{{ asset('images/gasPutih.png') }}" width="35" height="35" class="me-1">
         <div class="fs-4">G<i class="bi bi-fire fs-4" style="position: relative; top: -2px;"></i>SKU</div>
     </div>
-
     <!-- User Menu -->
     <div class="d-flex align-items-center gap-2 mb-2 mb-md-0">
-        <span class="text-white fw-bold fs-6 d-none d-md-block">username</span>
+        <span class="text-white fw-bold fs-6 d-none d-md-block">{{ Illuminate\Support\Facades\Auth::user()['username'] }}</span>
         <img src="{{ asset('images/tokito.jpg') }}" class="rounded-circle"
             style="width:40x; height:40px; object-fit:cover;">
 

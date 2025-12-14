@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\GasController;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\ProfilController;
+use App\Http\Controllers\API\TransaksiController;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
@@ -32,11 +33,12 @@ Route::get('/user/get', function(){
 
 
 Route::post('/login', [AuthController::class, 'loginMobile']);
-
+Route::post('/register', [AuthController::class, 'registerMobile']);
 Route::middleware(['auth:sanctum'])->group(function(){
     Route::post('/logout', [AuthController::class, 'logoutMobile']);
     Route::get('/me', [AuthController::class, 'me']);
     Route::get('/gas/get', [GasController::class, 'index']);
     Route::post('/gas/pembelian', [GasController::class, 'pembelian']);
     Route::post('/profil/ubah', [ProfilController::class, 'ubah']);
+    Route::get('/transaksi/get/user', [TransaksiController::class, 'getTransaksisByUserId']);
 });

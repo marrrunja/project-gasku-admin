@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\API;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Support\Facades\Log;
+
 class AuthController extends Controller
 {
     // udah bisa
@@ -62,4 +65,45 @@ class AuthController extends Controller
             'user' => Auth::user()
         ]);
     }
+
+   public function registerMobile(Request $request)
+{
+    // Cek apakah username sudah ada
+    $user = User::where('username', $request->username)->first();
+    if($user){
+        return response()->json([
+            'message' => 'Username sudah ada!'
+        ]);
+    }
+
+    // Ambil data dari request
+    $username = $request->username;
+    $password = Hash::make($request->password); // enkripsi password
+    $no_kk = $request->no_kk;
+    $nama_lengkap = $request->nama_lengkap;
+    $email = $request->email;
+    $alamat = $request->alamat;
+
+    // Format tanggal registrasi
+    $tanggal_registrasi = Carbon::now()->locale('id')->isoFormat('DD MMMM YYYY');
+
+    // Simpan ke database
+    DB::table('users')->insert([
+        'username' => $username,
+        'password' => $password,
+        'no_kk' => $no_kk,
+        'nama_lengkap' => $nama_lengkap,
+        'jenis_user' => 0,
+        'email' => $email,
+        'alamat_lengkap' => $alamat,
+        'created_at' => now(),
+        'updated_at' => now(),
+        'foto' => 'guest.png',
+    ]);
+
+    return response()->json([
+        'message' => 'Registrasi berhasil!',
+        'tanggal_registrasi' => $tanggal_registrasi
+    ]);
+}
 }
