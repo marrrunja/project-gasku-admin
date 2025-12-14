@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
       
         try{
             $seeders = [
-                // UserSeeder::class
-                GasSeeder::class
+                UserSeeder::class
+                // GasSeeder::class
             ];
             $this->call($seeders);
         }catch(\Exception $e){

@@ -21,7 +21,10 @@ Route::get('/admin/input-stok', [AdminController::class, 'inputStok']);
 Route::get('/admin/buat_account', [AdminController::class, 'buat_account'])->name('admin.buat_account');
 Route::get('/admin/aktivitas_pembeli', [AdminController::class, 'aktivitas_pembeli'])->name('admin.aktivitas_pembeli');
 Route::get('/admin/detail_transaksi', [AdminController::class, 'detail_transaksi'])->name('admin.detail_transaksi');
-Route::get('/admin/detail_akun', [AdminController::class, 'detail_akun'])->name('admin.detail_akun');
+Route::get('/admin/detail_akun/{id}', [AdminController::class, 'detail_akun'])->name('admin.detail_akun');
+
+Route::post('/admin/blokir/{id}', [AdminController::class, 'blokir'])->name('user.blokir');
+Route::post('/admin/buka/{id}', [AdminController::class, 'buka'])->name('user.buka');
 
 
 Route::get('/auth/login', [AuthController::class, 'login'])->name('login');

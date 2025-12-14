@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('jenis_user');
             $table->string('username');
             $table->boolean('can_buy')->default(true);
+            $table->boolean('is_aktif')->default(true);
             $table->string('foto');
             $table->string('alamat_lengkap');
             $table->string('no_kk');

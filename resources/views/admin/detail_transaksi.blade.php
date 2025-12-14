@@ -2,16 +2,10 @@
 
 @section('title', 'Detail Transaksi')
 @section('body')
-
-
-
-
     <section class="d-flex align-items-center" style="min-height:79vh;">
         <div class="container d-flex justify-content-center  mt-4 mb-5">
-
             <div class="p-4"
                 style=" width: 380px; background: white; border: 2px solid #7bc88f; border-radius: 12px; box-shadow: 0px 2px 6px rgba(0,0,0,0.1); ">
-
                 <!-- Judul -->
                 <h5 class="text-center fw-bold mb-1">Detail Pembayaran</h5>
                 <hr style="margin-top:4px; border:1px solid #222; ">

@@ -40,9 +40,11 @@ class ProfilController extends Controller
             return response()->json([
                 'message' => $e->getMessage()
             ]);
-        }
-
-
-
+        }   
+    }
+    public function detail(Request $request)
+    {
+        $id = $request->id;
+        $user = DB::table('users')->where('id', $id)->first();
     }
 }

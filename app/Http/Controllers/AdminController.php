@@ -31,12 +31,24 @@ class AdminController extends Controller
     {
         return view('admin.detail_transaksi');
     }
-    public function detail_akun()
+    public function detail_akun(Request $request)
     {
-        return view('admin.detail_akun');
+        $id = $request->id;
+        $user = DB::table('users')->where('id', $id)->first();
+        $data = [
+            'user' => $user
+        ];
+        return view('admin.detail_akun', $data);
     }
     public function inputStok(Request $request)
     {
         return view('admin.input-stok');
+    }
+
+    public function blokir(Request $request){
+        dd($request->id);
+    }
+    public function buka(Request $request){
+        dd($request->id);
     }
 }
